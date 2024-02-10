@@ -5,7 +5,7 @@ meaning I have in mind in this project.
 
 ## Description
 
-A program to perform some basic operations in multiplactive groups if integers
+A program to perform some basic operations in multiplactive groups of integers
 modulo n, and print the results.
 
 ## Functionality
