@@ -8,7 +8,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(global_compiler_flags INTERFACE)
 target_compile_options(global_compiler_flags INTERFACE -Wall -g)
 
-add_executable(main src/main.cc)
+add_library(util mimgp/util.cc)
+target_link_libraries(util PUBLIC global_compiler_flags)
+
+add_subdirectory(mimgp)
+
+add_executable(main mimgp/main.cc)
 target_link_libraries(main PUBLIC global_compiler_flags)
 target_link_libraries(main PUBLIC util)
+target_link_libraries(main PUBLIC eval)
+target_link_libraries(main PUBLIC ui)
+
 target_include_directories(main PUBLIC ${PROJECT_SOURCE_DIR}/include)
