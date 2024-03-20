@@ -6,7 +6,7 @@
 class Eval {
 	public:
 		CmdOtp eval(UInp &uinp) {
-			return CmdOtp("abc", "def");
+			return CmdOtp("", "none");
 		}
 };
 #endif

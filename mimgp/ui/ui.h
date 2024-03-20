@@ -11,10 +11,14 @@ class UI {
 		UI(void) {
 		}
 		void render() {
-			std::cout << "lollololol" << std::endl;
+			std::cout << get_last_cmdotp().data << std::endl;
 		}
 		UInp user_input(void) {
-			return UInp("lol");
+			std::string inp{""};
+
+			std::getline(std::cin, inp);
+			
+			return UInp(inp);
 		}
 };
 #endif
