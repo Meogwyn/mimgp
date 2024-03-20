@@ -5,6 +5,24 @@ project(elg_smp_attack VERSION 0.1)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(ENABLE_TESTING "Enable testing - unit tests won't run get built this. \
+Or rather, they will try to get built, and then crash the entire build process \
+as a result." OFF)
+
+if (ENABLE_TESTING)
+	enable_testing()
+	# Prepare for testing.
+	# Google Test Dependency.
+	include(FetchContent)
+
+	FetchContent_Declare(
+	  googletest
+	  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+	)
+	FetchContent_MakeAvailable(googletest)
+	include(GoogleTest)
+endif()
+
 add_library(global_compiler_flags INTERFACE)
 target_compile_options(global_compiler_flags INTERFACE -Wall -g)
 
