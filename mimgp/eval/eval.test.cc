@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "mimgp/eval.h"
+#include "mimgp/eval/eval.h"
 
 /*
  * The 'test' command outputs 'tost', followed by an enumerated and 
@@ -20,9 +20,9 @@ TEST(Eval, ExprIO) {
 	UInp uinp1 = UInp("group 25"); // Set modulus to 25.
 	UInp uinp2 = UInp("test (2 + 3) bla (4+ 5*   (3+ 7) + 4^2 + 3^(5 *1))");
 	CmdOtp cmdotp1;
-	CmdOtp cmdotp_true1 = CmdOtp("", "str");
+	CmdOtp cmdotp1_true = CmdOtp("", "str");
 	CmdOtp cmdotp2;
-	CmdOtp cmdotp_true2 = CmdOtp(
+	CmdOtp cmdotp2_true = CmdOtp(
 		"tost\n" 
 		"1. 5\n"
 		"2. bla\n"
