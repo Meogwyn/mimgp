@@ -16,7 +16,7 @@ add_subdirectory(mimgp)
 add_executable(main mimgp/main.cc)
 target_link_libraries(main PUBLIC global_compiler_flags)
 target_link_libraries(main PUBLIC util)
-target_link_libraries(main PUBLIC eval)
 target_link_libraries(main PUBLIC ui)
+target_link_libraries(main PUBLIC eval)
 
 target_include_directories(main PUBLIC ${PROJECT_SOURCE_DIR}/include)

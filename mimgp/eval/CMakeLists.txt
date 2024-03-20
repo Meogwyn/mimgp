@@ -1,3 +1,3 @@
-message("lol")
-add_library(eval eval.cc exec.cc cmds.cc cmd_binds.cc lexer.cc parser.cc)
+add_library(eval eval.cc)
 target_link_libraries(eval PUBLIC global_compiler_flags)
+target_include_directories(eval PUBLIC ${PROJECT_SOURCE_DIR})
