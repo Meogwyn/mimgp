@@ -1,3 +1,5 @@
 add_subdirectory(math)
 add_subdirectory(eval)
+add_subdirectory(cmd)
+add_subdirectory(calc)
 add_subdirectory(ui)
