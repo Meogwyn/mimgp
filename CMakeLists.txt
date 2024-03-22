@@ -8,7 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(ENABLE_TESTING "Enable testing - unit tests won't run get built this. \
 Or rather, they will try to get built, and then crash the entire build process \
 as a result." OFF)
-option(TEST_EVAL "Enable building of eval.test.cc" OFF)
+option(TEST_EVAL "Enable building of eval unit tests." OFF)
+option(TEST_LEXER "Enable building of eval lexer (not calc lexer) unit tests." 
+	OFF)
 
 if (ENABLE_TESTING)
 	enable_testing()
