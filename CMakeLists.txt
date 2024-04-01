@@ -33,9 +33,6 @@ endif()
 add_library(global_compiler_flags INTERFACE)
 target_compile_options(global_compiler_flags INTERFACE -Wall -g)
 
-add_library(util mimgp/util.cc)
-target_link_libraries(util PUBLIC global_compiler_flags)
-
 add_subdirectory(mimgp)
 
 add_executable(main mimgp/main.cc)

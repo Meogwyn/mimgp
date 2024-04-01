@@ -1,4 +1,7 @@
 add_library(util util.cc)
+target_link_libraries(util PUBLIC global_compiler_flags)
+target_include_directories(util PUBLIC ${PROJECT_SOURCE_DIR})
+
 
 add_subdirectory(lexer)
 add_subdirectory(calc)
