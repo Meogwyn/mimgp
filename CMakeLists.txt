@@ -14,6 +14,7 @@ option(TEST_LEXER "Enable building of eval lexer (not calc lexer) unit tests."
 option(TEST_CALCLEXER 
 	"Enable building of calc lexer unit tests." 
 	OFF)
+option(TEST_EVAL "Enable building of util unit tests." OFF)
 
 if (ENABLE_TESTING)
 	enable_testing()
