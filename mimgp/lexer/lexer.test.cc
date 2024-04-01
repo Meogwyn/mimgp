@@ -20,12 +20,7 @@ TEST(Lexer, BasicKeywords) {
 	// Get test tokens.
 	lxr.lex(tkns, uinp1);
 
-	// Compare results.
-	size = tkns.size();
-	ASSERT_EQ(tkns_true.size(), size);
-	for (int i = 0; i < size; i++) {
-		ASSERT_EQ(tkns_true[i].val, tkns_true[i].val);
-	}
+	ASSERT_EQ(tkns_true, tkns);
 }
 TEST(Lexer, BasicQuotedKeywords) {
 	Lexer lxr{};
@@ -42,12 +37,7 @@ TEST(Lexer, BasicQuotedKeywords) {
 	// Get test tokens.
 	lxr.lex(tkns, uinp1);
 
-	// Compare results.
-	size = tkns.size();
-	ASSERT_EQ(tkns_true.size(), size);
-	for (int i = 0; i < size; i++) {
-		ASSERT_EQ(tkns_true[i].val, tkns_true[i].val);
-	}
+	ASSERT_EQ(tkns_true, tkns);
 }
 TEST(Lexer, EscapeChars) {
 	Lexer lxr{};
@@ -64,12 +54,7 @@ TEST(Lexer, EscapeChars) {
 	// Get test tokens.
 	lxr.lex(tkns, uinp1);
 
-	// Compare results.
-	size = tkns.size();
-	ASSERT_EQ(tkns_true.size(), size);
-	for (int i = 0; i < size; i++) {
-		ASSERT_EQ(tkns_true[i].val, tkns_true[i].val);
-	}
+	ASSERT_EQ(tkns_true, tkns);
 }
 TEST(Lexer, Expressions) {
 	Lexer lxr{};
@@ -81,15 +66,10 @@ TEST(Lexer, Expressions) {
 	// Set up true tokens.
 	tkns_true.push_back(Keyword{"abc"});
 	tkns_true.push_back(Keyword{"XYZ"});
-	tkns_true.push_back(Expression{"[2 + 3 *8 ^ (16 * 3 + 1)]"});
+	tkns_true.push_back(Expression{"2 + 3 *8 ^ (16 * 3 + 1)"});
 
 	// Get test tokens.
 	lxr.lex(tkns, uinp1);
 
-	// Compare results.
-	size = tkns.size();
-	ASSERT_EQ(tkns_true.size(), size);
-	for (int i = 0; i < size; i++) {
-		ASSERT_EQ(tkns_true[i].val, tkns_true[i].val);
-	}
+	ASSERT_EQ(tkns_true, tkns);
 }
