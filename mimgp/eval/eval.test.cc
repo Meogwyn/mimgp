@@ -28,8 +28,12 @@ TEST(Eval, ExprIO) {
 		"2. bla\n"
 		"3. 13"
 	, "str");
-	ASSERT_EQ(cmdotp1.type, cmdotp1_true.type);
-	ASSERT_EQ(cmdotp1.data, cmdotp1_true.data);
-	ASSERT_EQ(cmdotp2.type, cmdotp2_true.type);
-	ASSERT_EQ(cmdotp2.data, cmdotp2_true.data);
+
+	cmdotp1 = ev.eval(uinp1);
+	cmdotp2 = ev.eval(uinp2);
+
+	EXPECT_EQ(cmdotp1.type, cmdotp1_true.type);
+	EXPECT_EQ(cmdotp1.data, cmdotp1_true.data);
+	EXPECT_EQ(cmdotp2.type, cmdotp2_true.type);
+	EXPECT_EQ(cmdotp2.data, cmdotp2_true.data);
 }
